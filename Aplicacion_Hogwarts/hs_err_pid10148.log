@@ -1,0 +1,114 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 480104 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (memory/allocation.inline.hpp:61), pid=10148, tid=0x0000000000004bd4
+#
+# JRE version:  (8.0_111-b14) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.111-b14 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000000027c0800):  JavaThread "Unknown thread" [_thread_in_vm, id=19412, stack(0x00000000026c0000,0x00000000027c0000)]
+
+Stack: [0x00000000026c0000,0x00000000027c0000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00000000027c0800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=19412, stack(0x00000000026c0000,0x00000000027c0000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff75cec0000 - 0x00007ff75cef7000 	D:\Java\jdk1.8.0_111\bin\java.exe
+0x00007ff8dc3d0000 - 0x00007ff8dc5c5000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ff8daa10000 - 0x00007ff8daacd000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ff8d9d40000 - 0x00007ff8da009000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ff8db490000 - 0x00007ff8db53c000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ff8dae40000 - 0x00007ff8daede000 	C:\Windows\System32\msvcrt.dll
+0x00007ff8dbd50000 - 0x00007ff8dbdeb000 	C:\Windows\System32\sechost.dll
+0x00007ff8dc260000 - 0x00007ff8dc38a000 	C:\Windows\System32\RPCRT4.dll
+0x00007ff8db2f0000 - 0x00007ff8db490000 	C:\Windows\System32\USER32.dll
+0x00007ff8da100000 - 0x00007ff8da122000 	C:\Windows\System32\win32u.dll
+0x00007ff8db170000 - 0x00007ff8db19a000 	C:\Windows\System32\GDI32.dll
+0x00007ff8d9c30000 - 0x00007ff8d9d3b000 	C:\Windows\System32\gdi32full.dll
+0x00007ff8da1e0000 - 0x00007ff8da27d000 	C:\Windows\System32\msvcp_win.dll
+0x00007ff8d9b00000 - 0x00007ff8d9c00000 	C:\Windows\System32\ucrtbase.dll
+0x00007ff8cb9c0000 - 0x00007ff8cbc5a000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ff8db1a0000 - 0x00007ff8db1d0000 	C:\Windows\System32\IMM32.DLL
+0x000000006ffc0000 - 0x0000000070092000 	D:\Java\jdk1.8.0_111\jre\bin\msvcr100.dll
+0x000000006e670000 - 0x000000006ef0a000 	D:\Java\jdk1.8.0_111\jre\bin\server\jvm.dll
+0x00007ff8dc1a0000 - 0x00007ff8dc1a8000 	C:\Windows\System32\PSAPI.DLL
+0x00007ff8d2d30000 - 0x00007ff8d2d3a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ff8cac10000 - 0x00007ff8cac37000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ff8bd020000 - 0x00007ff8bd029000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ff8dc060000 - 0x00007ff8dc0cb000 	C:\Windows\System32\WS2_32.dll
+0x000000006ff70000 - 0x000000006ff7f000 	D:\Java\jdk1.8.0_111\jre\bin\verify.dll
+0x000000006ff40000 - 0x000000006ff69000 	D:\Java\jdk1.8.0_111\jre\bin\java.dll
+0x000000006ff20000 - 0x000000006ff36000 	D:\Java\jdk1.8.0_111\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: aplicacion_hogwarts.Aplicacion_Hogwarts
+java_class_path (initial): D:\Codes\Reto5-MisionTic2022\Aplicacion_Hogwarts\build\classes
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Git\cmd;D:\NodeJs\;D:\Python\Python39\Scripts;D:\apache-ant-1.10.11\bin;D:\src\sql-Lite;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;D:\Python\Python39\Scripts\;D:\Python\Python39\;C:\Users\ingri\AppData\Local\Microsoft\WindowsApps;;D:\Microsoft VS Code\bin;C:\Users\ingri\AppData\Roaming\npm
+USERNAME=ingri
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10.0 , 64 bit Build 19041 (10.0.19041.1151)
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 158 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, tsc, tscinvbit, bmi1, bmi2, adx
+
+Memory: 4k page, physical 8339908k(649652k free), swap 22990272k(5576k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.111-b14) for windows-amd64 JRE (1.8.0_111-b14), built on Sep 22 2016 19:24:05 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Mon Sep 06 23:40:07 2021
+elapsed time: 0 seconds (0d 0h 0m 0s)
+

@@ -12,6 +12,8 @@
 
 package aplicacion_hogwarts;
 
+import java.awt.EventQueue;
+
 /**
  * Main class
  * @returns
@@ -23,6 +25,15 @@ public class Aplicacion_Hogwarts {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                EventQueue.invokeLater(new Runnable() {
+                    public void run() {
+                    GUI aplication = new GUI();
+                    }
+                });
+            }		
+	});
     }
-
 }
