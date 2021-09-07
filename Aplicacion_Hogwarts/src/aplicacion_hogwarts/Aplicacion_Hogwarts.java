@@ -13,6 +13,11 @@
 package aplicacion_hogwarts;
 
 import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Main class
@@ -36,4 +41,16 @@ public class Aplicacion_Hogwarts {
             }		
 	});
     }
+    
+        public static Font loadFont(String file) {
+        Font font = null;
+		try {
+			font = Font.createFont(Font.TRUETYPE_FONT, new File(GUI.class.getResource(file).getFile()));
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(font);
+		} catch (FontFormatException | IOException e) {
+                    // TODO Auto-generated catch block
+		}
+		return font;
+	}
 }

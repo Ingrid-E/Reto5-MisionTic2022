@@ -8,11 +8,17 @@ package aplicacion_hogwarts;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.io.File;
+import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 /**
  * @author Ingrid Echeverri ()
@@ -21,6 +27,8 @@ import javax.swing.*;
  */
 public class GUI extends JFrame{
     private GridBagConstraints c = new GridBagConstraints();
+    public static Font HenryP = Aplicacion_Hogwarts.loadFont("font/HarryP-Font.ttf");
+    
     
     public GUI(){
         this.setLayout(new GridBagLayout());
@@ -32,12 +40,13 @@ public class GUI extends JFrame{
         this.pack();
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.getContentPane().setBackground(Color.PINK);
+        this.getContentPane().setBackground(Color.decode("#D7BA99"));
     }
     
     public void initGUI(){
         JLabel titulo = new JLabel("Java Aplication");
-        titulo.setFont(titulo.getFont().deriveFont(30f));
+        titulo.setFont(HenryP.deriveFont(96f));
+        titulo.setForeground(Color.decode("#492D0E"));
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = 7;
@@ -70,12 +79,8 @@ public class GUI extends JFrame{
     
     
     public void tabla(){
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 1;
-        c.gridy = 2;
-        c.gridwidth = 5;
-        c.gridheight = 4;
-        c.insets=new Insets(1,40,1,1);
+        JPanel contenedor = new JPanel();
+        contenedor.setLayout(new GridBagLayout());
         String[] columnas = {"Nombre", "Cantidad","Disponible"};
         JButton probando = new JButton("X");
         Object[][] datos = {
@@ -84,29 +89,32 @@ public class GUI extends JFrame{
             {"Cindy", 27, false},
             {"Cindy", 27, false}
         };
-        JTable tabla = new JTable(datos, columnas);
-        tabla.setRowHeight(28);
-        this.add(tabla,c);
-        
-        int y = 2;
-        c.gridx = 6;
-        c.gridwidth = 1;
+
+        Tabla tabla = new Tabla(datos, columnas);
+        tabla.setRowHeight(40);
+        System.out.println("Table Font: " + tabla.getFont());
+        JScrollPane scrollPane = new JScrollPane(tabla);
+        tabla.setFillsViewportHeight(true);
+        scrollPane.setPreferredSize(new Dimension(820, 300));
+        contenedor.setPreferredSize(new Dimension(880, 350));
+        contenedor.add(scrollPane);
+        c.gridy = 2;
+        c.gridx = 1;
+        c.gridwidth = 5;
         c.gridheight = 1;
-        c.insets=new Insets(1,1,1,40);
-        for(Object[] fila: datos){
-            JButton eliminar = new JButton("x");
-            c.gridy = y;
-            this.add(eliminar,c);
-            y++;
-        }
-        
-        JPanel empty = new JPanel();
-        c.gridy = 6;
-        c.gridx = 4;
-        c.gridwidth = 2;
-        c.gridheight = 2;
-        c.insets=new Insets(40,40,40,40);
-        this.add(empty,c);
-      
+        c.insets=new Insets(1,1,1,1);
+        this.add(contenedor,c);
     }
+    private static Font loadFont(String file) {
+        Font font = null;
+		try {
+			font = Font.createFont(Font.TRUETYPE_FONT, new File(GUI.class.getResource(file).getFile()));
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(font);
+			
+		} catch (FontFormatException | IOException e) {
+                    // TODO Auto-generated catch block
+		}
+		return font;
+	}
 }
