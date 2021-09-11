@@ -12,12 +12,17 @@
 
 package aplicacion_hogwarts;
 
+import controlador.Conexion;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import model.Escuela;
 
 /**
  * Main class
@@ -35,6 +40,7 @@ public class Aplicacion_Hogwarts {
             public void run() {
                 EventQueue.invokeLater(new Runnable() {
                     public void run() {
+                    Conexion.conectar();            
                     GUI aplication = new GUI();
                     }
                 });
